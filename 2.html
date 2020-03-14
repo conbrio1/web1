@@ -1,78 +1,14 @@
 <!DOCTYPE html>
-<html> 
+<html>
     <head>
         <title>WEB1 - CSS</title>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- use <style> html tag to use CSS code -->
-        <style>
-            body {
-                margin: 0px;
-            }
-            /* in this scope,
-            a : selector(선택자)
-            {} : declaration(효과, 선언)
-            color : property(속성)
-            black : value(속성 값) */
-
-            /* CSS Priority
-            tag selector < class selector < id selector
-            Among the same kind of selectors, the later one have a higher priority */
-
-            /* #active
-            selector that select a tag that have "active" value in its id property */
-
-            /* .saw
-            selector that select all tag that have "saw" value
-            in its class property */
-            a {
-                color: black;
-                text-decoration: none;
-            }
-            h1 {
-                font-size: 45px;
-                text-align: center;
-                border-bottom: 1px solid gray;
-                margin: 0;
-                padding: 20px;
-            }
-            ol {
-                border-right: 1px solid gray;
-                width: 100px;
-                margin: 0;
-                padding: 20px;
-            }
-            #grid {
-                display: grid;
-                grid-template-columns: 150px 1fr;
-                /* 150px 1fr means
-                ol tag : 150px, div tag : 1fr */
-            }
-            /* #grid ol
-            Among all ol tags, select the ol tags that parent is #grid */
-            #grid ol {
-                padding-left: 30px;
-            }
-            /* #grid #article
-            select #article that has its parent as #grid */
-            #grid #article {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-            /* screen width < 600px */
-            @media (max-width: 600px) {
-                #grid {
-                    display: block;
-                }
-                ol {
-                    border-right: none;
-                }
-                h1 {
-                    border-bottom: none;
-                }
-            }
-        </style>
+        <!-- or just link .css file! -->
+        <link rel="stylesheet" href="style.css" />
     </head>
+
     <body>
         <h1><a href="index.html">WEB</a></h1>
         <div id="grid">

@@ -5,6 +5,9 @@
         <meta charset="utf-8" />
         <!-- use <style> html tag to use CSS code -->
         <style>
+            body {
+                margin: 0px;
+            }
             /* in this scope,
             a : selector(선택자)
             {} : declaration(효과, 선언)
@@ -33,6 +36,15 @@
             h1 {
                 font-size: 45px;
                 text-align: center;
+                border-bottom: 1px solid gray;
+                margin: 0;
+                padding: 20px;
+            }
+            ol {
+                border-right: 1px solid gray;
+                width: 100px;
+                margin: 0;
+                padding: 20px;
             }
         </style>
     </head>
@@ -45,7 +57,7 @@
                 <!-- to use style in <a> html tag,
                     add inline property like
                     style="color: red; text-decoration: underline;" -->
-                    
+
                 <!-- class="saw active"
                     one tag can be belonged(classed)
                     by two or more classes.

@@ -1,0 +1,37 @@
+<!-- GRID -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>GRID</title>
+        <style>
+            #grid {
+                border: 5px solid pink;
+                display: grid;
+                /* grid-template-columns: 1fr 1fr */
+                /* 1fr : Relative screen size unit */
+                /* in this situation,
+                   NAVIGATION : 150px, ARTICLE : 1fr */
+                grid-template-columns: 150px 1fr;
+            }
+            div {
+                border: 5px solid gray;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- div tag : block level element -->
+        <!-- span tag : inline element -->
+        <!-- div & span tags are just for design. -->
+        <div id="grid">
+            <div>NAVIGATION</div>
+            <div>
+                <!-- ARTICLE -->
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est,
+                natus. Officiis debitis beatae reprehenderit nulla, omnis
+                laudantium, doloremque ea incidunt ratione fugit quasi earum
+                obcaecati suscipit ipsum ullam, nobis nisi?
+            </div>
+        </div>
+    </body>
+</html>

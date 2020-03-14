@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
     <head>
         <title>WEB1 - CSS</title>
         <meta charset="utf-8" />
@@ -56,6 +56,18 @@
             select #article that has its parent as #grid */
             #grid #article {
                 padding-left: 25px;
+            }
+            /* screen width < 600px */
+            @media (max-width: 600px) {
+                #grid {
+                    display: block;
+                }
+                ol {
+                    border-right: none;
+                }
+                h1 {
+                    border-bottom: none;
+                }
             }
         </style>
     </head>

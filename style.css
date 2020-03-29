@@ -18,7 +18,7 @@ selector that select a tag that have "active" value in its id property */
 selector that select all tag that have "saw" value
 in its class property */
 a {
-    color: black;
+    color: blue;
     text-decoration: none;
 }
 h1 {
@@ -55,6 +55,7 @@ select #article that has its parent as #grid */
     text-align: center;
 }
 /* screen width < 600px */
+/* media query */
 @media (max-width: 600px) {
     #grid {
         display: block;

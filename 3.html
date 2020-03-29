@@ -10,36 +10,37 @@
     <body>
         <h1><a href="index.html">WEB</a></h1>
         <input
-            id="night_day"
             type="button"
             value="night"
             onclick="
-            /* condition can be (this.value == 'night') */
-            if(document.querySelector('#night_day').value === 'night') {
+            var target = document.querySelector('body');
+            
+            if(this.value === 'night') {
                 /* The Document method querySelector() returns the first Element('tag')
                 within the document that matches the specified selector, or group of selectors.
                 If no matches are found, null is returned. */
-                document.querySelector('body').style.backgroundColor = 'black';
-                document.querySelector('body').style.color = 'white';
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
                 
                 /* The Document method querySelectorAll() returns a static (not live) NodeList
                 representing a list of the document's elements that match the specified group of selectors. */
                 document.querySelectorAll('a').forEach(element => {
-                    element.style.color = 'white';
+                    element.style.color = 'powderblue';
                 });
 
-                // document.querySelector('body').querySelector('input').value = 'day';
-                document.querySelector('#night_day').value = 'day'
+                this.value = 'day'
             }
             else {
-                document.querySelector('body').style.backgroundColor = 'white';
-                document.querySelector('body').style.color = 'black';
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
 
-                document.querySelectorAll('a').forEach(element => {
-                    element.style.color = 'black';
-                });
+                var alist = document.querySelectorAll('a');
 
-                document.querySelector('#night_day').value = 'night'
+                for(let i = 0; i < alist.length; i++) {
+                    alist[i].style.color = 'blue';
+                }
+
+                this.value = 'night'
             }
         "
         />

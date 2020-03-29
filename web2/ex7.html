@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Loop & Array</title>
+    </head>
+    <body>
+        <h1>Loop & Array</h1>
+        <script>
+            var coworkers = ["hyeongjong", "wonsik", "intae", "hongki"];
+        </script>
+        <h2>Co workers</h2>
+        <ul>
+            <script>
+                for (let i = 0; i < coworkers.length; i++) {
+                    const element = coworkers[i];
+                    document.write(
+                        "<li><a href='http://a.com/'>" + element + "</a></li>"
+                    );
+                }
+            </script>
+        </ul>
+    </body>
+</html>

@@ -5,6 +5,39 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
+        <script>
+            function BodySetBackgroundColor(color) {
+                /* The Document method querySelector() returns the first Element('tag')
+                within the document that matches the specified selector, or group of selectors.
+                If no matches are found, null is returned. */
+                document.querySelector("body").style.backgroundColor = color;
+            }
+            function BodySetColor(color) {
+                document.querySelector("body").style.color = color;
+            }
+            function LinksSetColor(color) {
+                /* The Document method querySelectorAll() returns a static (not live) NodeList
+                representing a list of the document's elements that match the specified group of selectors. */
+                document.querySelectorAll("a").forEach(element => {
+                    element.style.color = color;
+                });
+            }
+            function nightDayHandler(self) {
+                if (self.value === "night") {
+                    BodySetBackgroundColor("black");
+                    BodySetColor("white");
+                    self.value = "day";
+
+                    LinksSetColor("powderblue");
+                } else {
+                    BodySetBackgroundColor("white");
+                    BodySetColor("black");
+                    self.value = "night";
+
+                    LinksSetColor("blue");
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -13,35 +46,7 @@
             type="button"
             value="night"
             onclick="
-            var target = document.querySelector('body');
-            
-            if(this.value === 'night') {
-                /* The Document method querySelector() returns the first Element('tag')
-                within the document that matches the specified selector, or group of selectors.
-                If no matches are found, null is returned. */
-                target.style.backgroundColor = 'black';
-                target.style.color = 'white';
-                
-                /* The Document method querySelectorAll() returns a static (not live) NodeList
-                representing a list of the document's elements that match the specified group of selectors. */
-                document.querySelectorAll('a').forEach(element => {
-                    element.style.color = 'powderblue';
-                });
-
-                this.value = 'day'
-            }
-            else {
-                target.style.backgroundColor = 'white';
-                target.style.color = 'black';
-
-                var alist = document.querySelectorAll('a');
-
-                for(let i = 0; i < alist.length; i++) {
-                    alist[i].style.color = 'blue';
-                }
-
-                this.value = 'night'
-            }
+                nightDayHandler(this);
         "
         />
         <div id="grid">

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Objec</title>
+    </head>
+    <body>
+        <h1>Object</h1>
+        <h2>Create</h2>
+        <script>
+            // 배열 : 순서대로 정보를 저장
+            // 객체 : 순서없이 정보를 저장
+
+            // Javascript에서 객체 내부에 존재하는 함수를 메소드(Method)라고 한다.
+            // 객체 내부에 존재하는 변수는 프로퍼티(Property)라고 한다.
+            // Array는 []대괄호, 객체는 {}중괄호로 표현한다.
+
+            // '.' : object access operator
+
+            // 객체 생성
+            var coworkers = {
+                programmer: "hyeongjong",
+                designer: "wonsik"
+            };
+
+            // 객체 data 가져오기
+            document.write("programmer : " + coworkers.programmer + "<br>");
+            document.write("designer : " + coworkers.designer + "<br>");
+
+            // 객체 data 넣기
+            coworkers.bookkeeper = "intae";
+            document.write("bookkeeper : " + coworkers.bookkeeper + "<br>");
+
+            // key 값으로 공백이 들어갈 수 없는데,
+            // 아래와 같이 배열 표현처럼 쓰면 공백이 사용 가능하다.
+            coworkers["data scientist"] = "hongki";
+            document.write(
+                "data scientist : " + coworkers["data scientist"] + "<br>"
+            );
+        </script>
+        <h2>Iterate</h2>
+        <script>
+            for (var key in coworkers) {
+                document.write(key + " : " + coworkers[key] + "<br>");
+            }
+        </script>
+        <h2>Property & Method</h2>
+        <script>
+            // 실제로 함수를 정의할 때 아래와 같이 표현할 수 있다.
+            // var showAll = function() {}
+
+            // 객체 method 생성
+            coworkers.showAll = function() {
+                for (var key in this) {
+                    if (key === "showAll") continue;
+                    document.write(key + " : " + this[key] + "<br>");
+                }
+            };
+            coworkers.showAll();
+        </script>
+    </body>
+</html>

@@ -29,7 +29,6 @@ h1 {
     padding: 20px;
 }
 ol {
-    border-right: 1px solid gray;
     width: 100px;
     margin: 0;
     padding: 20px;
@@ -39,6 +38,17 @@ ol {
     grid-template-columns: 150px 1fr;
     /* 150px 1fr means
     ol tag : 150px, div tag : 1fr */
+}
+#grid #menu {
+    display: grid;
+    grid-template-rows: 40px 1fr;
+
+    border-right: 1px solid gray;
+}
+#grid input {
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 60px;
 }
 /* #grid ol
 Among all ol tags, select the ol tags that parent is #grid */
@@ -60,7 +70,7 @@ select #article that has its parent as #grid */
     #grid {
         display: block;
     }
-    ol {
+    #grid #menu {
         border-right: none;
     }
     h1 {

@@ -13,32 +13,38 @@
 
     <body>
         <h1><a href="index.html">WEB</a></h1>
-        <input type="button" value="night" onclick="nightDayHandler(this);" />
         <div id="grid">
-            <ol>
-                <li><a href="1.html" title="HTML">HTML</a></li>
-                <!-- style : property of <a> html tag that has value as CSS -->
-                <li>
-                    <!-- to use CSS style in <a> html tag,
-                        add inline property like
-                        style="color: red; text-decoration: underline;" -->
+            <div id="menu">
+                <input
+                    type="button"
+                    value="night"
+                    onclick="nightDayHandler(this);"
+                />
+                <ol>
+                    <li><a href="1.html" title="HTML">HTML</a></li>
+                    <!-- style : property of <a> html tag that has value as CSS -->
+                    <li>
+                        <!-- to use CSS style in <a> html tag,
+                            add inline property like
+                            style="color: red; text-decoration: underline;" -->
 
-                    <!-- class="saw active"
-                        one tag can be belonged(classed)
-                        by two or more classes.
-                        
-                        But, the later one IN <STYLE> TAG
-                        have more influence to it. -->
+                        <!-- class="saw active"
+                            one tag can be belonged(classed)
+                            by two or more classes.
+                            
+                            But, the later one IN <STYLE> TAG
+                            have more influence to it. -->
 
-                    <!-- class="saw" id="active"
-                        id property has a greater influence
-                        than class property.
-                        
-                        The id property must appear only once.(UNIQUE) -->
-                    <a href="2.html" title="CSS">CSS</a>
-                </li>
-                <li><a href="3.html" title="JavaScript">JavaScript</a></li>
-            </ol>
+                        <!-- class="saw" id="active"
+                            id property has a greater influence
+                            than class property.
+                            
+                            The id property must appear only once.(UNIQUE) -->
+                        <a href="2.html" title="CSS">CSS</a>
+                    </li>
+                    <li><a href="3.html" title="JavaScript">JavaScript</a></li>
+                </ol>
+            </div>
             <div id="article">
                 <h2>CSS</h2>
                 <p>

@@ -13,9 +13,14 @@ var Links = {
     setColor: function(color) {
         /* The Document method querySelectorAll() returns a static (not live) NodeList
         representing a list of the document's elements that match the specified group of selectors. */
-        document.querySelectorAll("a").forEach(element => {
-            element.style.color = color;
-        });
+
+        //JQueary
+        $("a").css("color", color);
+        
+        //javascript
+        // document.querySelectorAll("a").forEach(element => {
+        //     element.style.color = color;
+        // });
     }
 };
 function nightDayHandler(self) {
@@ -24,7 +29,7 @@ function nightDayHandler(self) {
         Body.setColor("white");
         self.value = "day";
 
-        Links.setColor("powderblue");
+        Links.setColor("red");
     } else {
         Body.setBackgroundColor("white");
         Body.setColor("black");

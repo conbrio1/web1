@@ -48,6 +48,9 @@ ol {
 /* #grid input
 Among all input tags, select the input tags that parent is #grid */
 #grid input {
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
     margin-top: 10px;
     width: 60px;
 }

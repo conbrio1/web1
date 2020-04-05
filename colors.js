@@ -46,12 +46,15 @@ var File = {
         for (let index = 1; index <= num; index++) {
             this.fileList[index] = "ex" + index;
         }
+        this.fileList.push("box");
+        this.fileList.push("grid");
+        this.fileList.push("mediaquery");
     },
     writeFileList: function (list) {
         list.forEach((element) => {
             document.write(
                 "<li>" +
-                    "<a href='web2/" +
+                    "<a href='example/" +
                     element +
                     ".html' title='" +
                     element +

@@ -14,7 +14,7 @@ var Links = {
         /* The Document method querySelectorAll() returns a static (not live) NodeList
         representing a list of the document's elements that match the specified group of selectors. */
 
-        //JQueary
+        //JQuery
         $("a").css("color", color);
 
         //javascript
@@ -39,34 +39,38 @@ function nightDayHandler(self) {
     }
 }
 
-//for showing example file list in #gird #menu
+//for showing example file list in #grid #nav
 var File = {
     fileList: [],
-    setFileList: function (num) {
-        for (let index = 1; index <= num; index++) {
+    setFileList: function () {
+        for (let index = 1; index <= 9; index++) {
             this.fileList[index] = "ex" + index;
         }
         this.fileList.push("box");
         this.fileList.push("grid");
         this.fileList.push("mediaquery");
+        this.fileList.push("fetch");
+        this.fileList.push("hash");
     },
     writeFileList: function (list) {
         list.forEach((element) => {
-            document.write(
-                "<li>" +
-                    "<a href='example/" +
-                    element +
-                    ".html' title='" +
-                    element +
-                    "'>" +
-                    element +
-                    "</a>" +
-                    "</li>"
-            );
+            document.querySelector('#example').innerHTML +=
+                "<li><a title=\""+ element +"\" \
+                        href=\"example/"+ element + ".html\" \
+                    >"+ element + "</a \
+                ></li>";
         });
     },
 };
-function setExFileList(num) {
-    File.setFileList(9);
+function setExFileList() {
+    File.setFileList();
     File.writeFileList(File.fileList);
+}
+
+function fetchPage(name) {
+    fetch(name).then(function (response) {
+        response.text().then(function (text) {
+            document.querySelector("#article").innerHTML = text;
+        });
+    });
 }

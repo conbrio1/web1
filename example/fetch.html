@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fetch API</title>
+    </head>
+    <body>
+        <article></article>
+        <input
+            type="button"
+            value="fetch"
+            onclick="
+                /* fucntion () {} : 익명함수 */
+                /*
+                fetch('article/html').then(function (response) {
+                    response.text().then(function(text) {
+                        alert(text);
+                        document.querySelector('article').innerHTML = text;
+                    })
+                })
+                */
+
+                /* Asynchronous : 비동기
+                fetch 함수는 비동기로 동작.
+                fetch 요청이 시작되면,
+                끝나기 전에는 다른 코드를 실행하다가
+                끝나면 then이 callback으로 동작한다.
+                
+                Synchronous : 동기
+                동기 함수는 요청이 시작되고 끝날 때 까지 대기해야한다.
+
+                fetch API doc : then에 인자로 callback 함수를 주면
+                callback 함수를 fetch API가 실행시킬 때,
+                해당 함수의 첫번째 인자의 값으로 response 객체를 준다.
+                (response 객체의 이름이 'response'라는 것은 아니다. 아무 이름이나 가능)
+
+                response 객체에 포함된 status 속성 : 요청 상태
+                200 -> OK(성공), 404 -> not found(파일이 없음).
+                */
+                fetch('article/html').then(function (response) {
+                    console.log(response.status);
+                    if(response.status == '404') {
+                        alert('Not found');
+                    }
+                });
+                console.log(1);
+                console.log(2);
+            "
+        />
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Fragment Identifier - hash</title>
+    </head>
+    <body>
+        <!-- hash : bookmark 기능. 구분위해서 관습적으로 !(bang) 붙임. (hash bang) -->
+        <a href="#!three">three</a>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad placeat
+            ipsa repellendus qui repellat possimus, quod quidem voluptate eos in
+            molestias neque quibusdam mollitia, ullam aperiam unde quisquam
+            debitis! Iste nobis natus, voluptatem perspiciatis fugiat sed veniam
+            alias quos magnam repellat odio. Deserunt, eveniet aperiam
+            perspiciatis repudiandae veniam odit assumenda, natus incidunt
+            possimus explicabo magni necessitatibus maxime itaque vel totam
+            similique error praesentium laudantium autem commodi velit impedit
+            iusto! Officia soluta impedit ratione est, amet deserunt laborum
+            perspiciatis numquam nam repellendus odit, beatae excepturi. Quod,
+            placeat sapiente earum dolorum dolores itaque, id dolorem corporis
+            necessitatibus veritatis facere a eaque cumque?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit cum
+            inventore nobis, officiis ex molestias. Velit iste asperiores
+            quaerat quo reiciendis, enim laboriosam sapiente! Doloribus,
+            provident laborum. Rerum odit, dolore eius architecto excepturi
+            repellat. Quisquam alias, assumenda quam odio eveniet architecto
+            voluptatem? Voluptatum porro autem, inventore quo voluptates quos
+            ipsa nostrum ducimus earum facilis! Repellat hic voluptate officiis
+            esse quae aliquam labore facilis voluptatibus dignissimos est soluta
+            ratione, saepe vitae repellendus commodi tenetur provident aliquid?
+            Molestias eius minus qui, enim magni ea ratione adipisci quia
+            perspiciatis soluta alias quae repudiandae dolore impedit, illo
+            reprehenderit ducimus. Accusamus voluptatum sint pariatur
+            praesentium?
+        </p>
+        <p id="three">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Consequatur aut unde expedita aspernatur accusantium dolorem
+            pariatur quo! Nemo in quia amet sunt explicabo. Praesentium totam
+            itaque, impedit nisi aspernatur facilis amet maiores ipsa? Cum natus
+            modi illum atque? Molestiae possimus nostrum, atque dolor quia
+            voluptatem. Consequuntur aspernatur velit, expedita, nulla tenetur
+            id voluptatibus perferendis sunt dolores veniam necessitatibus
+            dolorem delectus cumque veritatis iste excepturi voluptatem
+            doloremque eius laboriosam beatae tempore, modi mollitia unde quos?
+            Magnam doloremque eaque dignissimos officiis corporis neque
+            repellendus exercitationem reiciendis, laudantium saepe!
+            Voluptatibus voluptatum unde alias quaerat ullam? Accusamus
+            doloribus, soluta at unde possimus provident illum.
+        </p>
+        <script>
+            if (location.hash) {
+                console.log(location.hash.substr(1));
+            } else {
+            }
+        </script>
+    </body>
+</html>

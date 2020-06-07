@@ -9,25 +9,20 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="colors.js"></script>
         <script>
-            function statusChangeCallback(response) {
-                // Called with the results from FB.getLoginStatus().
-                console.log("statusChangeCallback");
-                console.log(response); // The current login status of the person.
+            var checkLoginStatus = function (response) {
+                // Called after the JS SDK has been initialized.
+                console.log(response);
                 if (response.status === "connected") {
-                    // Logged into your webpage and Facebook.
-                    testAPI();
+                    document.querySelector("#authBtn").value = "Logout";
+                    FB.api("/me", function (res) {
+                        document.querySelector("#name").innerHTML =
+                            "Welcome! " + res.name;
+                    });
                 } else {
-                    // Not logged into your webpage or we are unable to tell.
-                    document.getElementById("status").innerHTML =
-                        "Please log " + "into this webpage.";
+                    document.querySelector("#authBtn").value = "Login";
+                    document.querySelector("#name").innerHTML = "";
                 }
-            }
-
-            function checkLoginState() {
-                FB.getLoginStatus(function (response) {
-                    statusChangeCallback(response);
-                });
-            }
+            };
 
             window.fbAsyncInit = function () {
                 FB.init({
@@ -37,13 +32,7 @@
                     version: "v7.0", // Use this Graph API version for this call.
                 });
 
-                var callback = function (response) {
-                    console.log(response);
-                };
-                FB.getLoginStatus(callback);
-                // FB.getLoginStatus(function (response) {   // Called after the JS SDK has been initialized.
-                //     statusChangeCallback(response);        // Returns the login status.
-                // });
+                FB.getLoginStatus(checkLoginStatus);
             };
 
             (function (d, s, id) {
@@ -56,16 +45,6 @@
                 js.src = "https://connect.facebook.net/en_US/sdk.js";
                 fjs.parentNode.insertBefore(js, fjs);
             })(document, "script", "facebook-jssdk");
-
-            function testAPI() {
-                // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-                console.log("Welcome!  Fetching your information.... ");
-                FB.api("/me", function (response) {
-                    console.log("Successful login for: " + response.name);
-                    document.getElementById("status").innerHTML =
-                        "Thanks for logging in, " + response.name + "!";
-                });
-            }
         </script>
     </head>
 
@@ -83,12 +62,28 @@
                         value="night"
                         onclick="nightDayHandler(this);"
                     />
-                    <fb:login-button
-                        scope="public_profile,email"
-                        onlogin="checkLoginState();"
-                    >
-                    </fb:login-button>
+                    <input
+                        type="button"
+                        value="..."
+                        id="authBtn"
+                        onclick="
+                        if(this.value === 'Logout') {
+                            // now logout
+                            FB.logout(function(response) {
+                                console.log('called FB.logout =>', response)
+                                checkLoginStatus(response);
+                            });
+                        } else { // when (this.value === 'Login')
+                            // now login
+                            FB.login(function(response) {
+                                console.log('called FB.login function =>', response)
+                                checkLoginStatus(response);
+                            });
+                        }
+                    "
+                    />
                 </div>
+                <div id="name"></div>
                 <ol id="nav"></ol>
                 <h3>Example List</h3>
                 <ol id="example"></ol>
@@ -109,7 +104,7 @@
                         items.forEach((element) => {
                             element = element.trim();
                             var tag =
-                                '<li><a href="#!' +
+                                '<li><a href="#!' + // hash bang(#!) 적용
                                 element +
                                 '" title="' +
                                 element +

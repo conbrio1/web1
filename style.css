@@ -31,7 +31,8 @@ h1 {
 ol {
     width: 100px;
     margin: 0;
-    padding: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
 }
 #grid {
     display: grid;
@@ -41,15 +42,18 @@ ol {
 }
 #grid #menu {
     display: grid;
-    grid-template-rows: auto 100px auto 1fr;
+    grid-template-rows: auto 30px 100px auto 1fr;
     padding-left: 10px;
     border-right: 1px solid gray;
 }
 #grid #menu #button {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 70px 60px;
 
     margin-top: 10px;
+}
+#grid #name {
+    padding-top: 10px;
 }
 /* #grid input
 Among all input tags, select the input tags that parent is #grid */

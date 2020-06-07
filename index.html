@@ -7,6 +7,15 @@
         <link href="style.css" rel="stylesheet" />
         <script src="https://polyfill.io/v3/polyfill.min.js?features=fetch"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script
+            src="https://apis.google.com/js/platform.js"
+            async
+            defer
+        ></script>
+        <meta
+            name="google-signin-client_id"
+            content="558598951486-b9n11bkiu5ac0hj6uuq1polfc307ft6e.apps.googleusercontent.com"
+        />
         <script src="colors.js"></script>
         <script>
             var checkLoginStatus = function (response) {
@@ -16,7 +25,7 @@
                     document.querySelector("#authBtn").value = "Logout";
                     FB.api("/me", function (res) {
                         document.querySelector("#name").innerHTML =
-                            "Welcome! " + res.name;
+                            "FB signed: " + res.name;
                     });
                 } else {
                     document.querySelector("#authBtn").value = "Login";
@@ -45,6 +54,15 @@
                 js.src = "https://connect.facebook.net/en_US/sdk.js";
                 fjs.parentNode.insertBefore(js, fjs);
             })(document, "script", "facebook-jssdk");
+        </script>
+        <script>
+            function onSignIn(googleUser) {
+                var profile = googleUser.getBasicProfile();
+                console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                console.log("Name: " + profile.getName());
+                console.log("Image URL: " + profile.getImageUrl());
+                console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
+            }
         </script>
     </head>
 
@@ -83,6 +101,7 @@
                     "
                     />
                 </div>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
                 <div id="name"></div>
                 <ol id="nav"></ol>
                 <h3>Example List</h3>

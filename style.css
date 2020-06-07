@@ -42,7 +42,7 @@ ol {
 }
 #grid #menu {
     display: grid;
-    grid-template-rows: auto 30px 100px auto 1fr;
+    grid-template-rows: auto 45px 30px 100px auto 1fr;
     padding-left: 10px;
     border-right: 1px solid gray;
 }
@@ -51,6 +51,9 @@ ol {
     grid-template-columns: 70px 60px;
 
     margin-top: 10px;
+}
+#grid #menu .g-signin2 {
+    padding-top: 10px;
 }
 #grid #name {
     padding-top: 10px;
